@@ -1,0 +1,26 @@
+{
+  "name": "@8128-33550336/random",
+  "version": "0.0.1",
+  "description": "random",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/8128-33550336/random.git"
+  },
+  "files": [
+    "src",
+    "README.md"
+  ],
+  "author": "8128-33550336",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.0"
+  }
+}
