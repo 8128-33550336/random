@@ -2,8 +2,8 @@
   "name": "@8128-33550336/random",
   "version": "0.0.1",
   "description": "random",
-  "main": "src/index.js",
-  "types": "src/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "publishConfig": {
     "access": "restricted",
     "registry": "https://npm.pkg.github.com/"
@@ -13,7 +13,7 @@
     "url": "https://github.com/8128-33550336/random.git"
   },
   "files": [
-    "src",
+    "dist",
     "README.md"
   ],
   "author": "8128-33550336",
