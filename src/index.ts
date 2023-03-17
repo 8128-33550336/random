@@ -12,7 +12,7 @@ function random(length: number = 32, option?: OptionType) {
         .replaceAll('/', slash);
 }
 
-export function generate(option: OptionType) {
+export function generate(option?: OptionType) {
     return (length: number) => random(length, option);
 }
 
