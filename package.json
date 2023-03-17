@@ -22,5 +22,8 @@
   },
   "devDependencies": {
     "@types/node": "^18.15.0"
+  },
+  "dependencies": {
+    "commander": "^10.0.0"
   }
 }
