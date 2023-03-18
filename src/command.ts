@@ -3,6 +3,8 @@
 import { program } from "commander";
 import { generate, number } from ".";
 
+const defaultLen = 16;
+
 program
     .option('-s <char>')
     .option('-c <count>')
@@ -65,7 +67,7 @@ for (const lengthString of program.args) {
 }
 
 if (lengths.length === 0) {
-    lengths.push(16);
+    lengths.push(defaultLen);
 }
 
 for (const length of lengths) {
