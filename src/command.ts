@@ -48,20 +48,27 @@ const count = (() => {
     return 1;
 })();
 
+const lengths = [];
+
 for (const lengthString of program.args) {
     const length = +lengthString;
     if (isNaN(length)) {
-        console.error('args must be number');
-        continue;
+        throw new Error('args must be number');
     }
     if (length <= 0) {
-        console.error('args must be plus');
-        continue;
+        throw new Error('args must be plus');
     }
     if (length !== ~~length) {
-        console.error('args must be int');
-        continue;
+        throw new Error('args must be int');
     }
+    lengths.push(length);
+}
+
+if (lengths.length === 0) {
+    lengths.push(16);
+}
+
+for (const length of lengths) {
     for (let i = 0; i < count; i++) {
         const rand = gen(length);
         console.log(rand);
