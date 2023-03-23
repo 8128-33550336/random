@@ -1,20 +1,21 @@
 #!/usr/bin/env node
 
 import { program } from "commander";
-import { generate, number } from ".";
+import { alphabet, generate, number } from ".";
 
 const defaultLen = 16;
 
 program
     .option('-s <char>')
     .option('-c <count>')
-    .option('-n');
+    .option('-n')
+    .option('-a');
 
 program.parse();
 
-const { s, n, c } = program.opts();
+const { s, c, n, a } = program.opts();
 const gen: (len: number) => string = (() => {
-    if (!n) {
+    if (!n && !a) {
         const chars: [string, string] | undefined = (() => {
             if (s && typeof s === 'string') {
                 if (s.length === 2 && s[0] && s[1]) {
@@ -25,11 +26,18 @@ const gen: (len: number) => string = (() => {
             return undefined;
         })();
         return generate(chars);
-    } else {
+    } else if (n && !a) {
         if (s) {
             throw new Error('The c option cannot be set when the n option is set.');
         }
         return number;
+    } else if (a && !n) {
+        if (s) {
+            throw new Error('The c option cannot be set when the a option is set.');
+        }
+        return alphabet;
+    } else {
+        throw new Error('Both the a and n options cannot be set.');
     }
 })();
 
